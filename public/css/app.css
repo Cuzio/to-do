@@ -1,0 +1,21 @@
+.list {
+    border-radius: 10px;
+    background-color: #222222;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5rem;
+    width: 50vw;
+    margin: 5rem auto 0;
+    padding: 5px;
+}
+.todo {
+    background-color: #999999;
+}
+.line {
+    color: #fff;
+}
+.to {
+    color: #fff;
+}

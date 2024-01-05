@@ -22,3 +22,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/todo', [TodoController::class, 'todo']);
+
+Route::post('/createTodo', [TodoController::class, 'createTodo']);
