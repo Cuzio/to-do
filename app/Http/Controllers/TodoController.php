@@ -15,13 +15,16 @@ class TodoController extends Controller
 
     public function createTodo(Request $request){
         $validator = Validator::make($request->all(), [
-            'title' => 'required'
+            'title' => 'required',
+            'description' => 'required'
         ]);
         if ($validator->fails()){
             return back()->withError($validator->errors());
         }
         $formFields  = [
-            'title' => $request->title
+            'title' => $request->title,
+            'description' => $request->description,
+            'is_complete' => $request->is_complete
         ];
 
         
