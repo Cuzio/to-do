@@ -10,7 +10,10 @@ use App\Models\Todo;
 class TodoController extends Controller
 {
     public function todo(){
-        return view('todo');
+        $todos = Todo::all();
+        return view('todo', [
+            'todos' => $todos
+        ]);
     }
 
     public function createTodo(Request $request){
