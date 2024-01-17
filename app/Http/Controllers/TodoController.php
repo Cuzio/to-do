@@ -43,7 +43,7 @@ class TodoController extends Controller
     public function getEvents(){
         $events = Todo::all();
         if($events){
-            return view('get-event', [
+            return view('welcome', [
                 'events' => $events
             ]);
         }
