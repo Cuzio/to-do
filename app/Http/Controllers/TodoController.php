@@ -39,4 +39,13 @@ class TodoController extends Controller
             return back()->with('error', "Something went wrong");
         }
     }
+
+    public function getEvents(){
+        $events = Todo::all();
+        if($events){
+            return view('get-event', [
+                'events' => $events
+            ]);
+        }
+    }
 }

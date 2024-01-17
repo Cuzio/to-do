@@ -24,3 +24,5 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('/todo', [TodoController::class, 'todo']);
 
 Route::post('/createTodo', [TodoController::class, 'createTodo']);
+
+Route::get('/getEvent', [TodoController::class, 'getEvents'])->name("get.events");

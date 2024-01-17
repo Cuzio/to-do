@@ -27,6 +27,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/todo">Todos</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/getEvent">Events</a>
+                    </li>
             </div>
         </div>
     </nav>
