@@ -18,12 +18,6 @@
     border-radius: 30px;
     background: rgba(255, 253, 244, 0.96);
 }
-.line {
-    color: #fff;
-}
-.to {
-    color: #fff;
-}
 .task-container {
     width: 100%;
     padding: 10px;
@@ -33,6 +27,7 @@
     display: flex;
     border-radius: 20px;
     border: 2px solid #d6d6d6;
+    color: #00000080;
     width: 100%;
     justify-content: space-between;
     align-items: center;
@@ -59,16 +54,21 @@
     left: 55rem;
 }
 .new-task-button {
-    /* padding-bottom: 60px; */
     border-radius: 50%;
     border: none;
     background-color: #dfbd43;
-    color: #fff;
-    font-size: 40px;
+    /* color: #fff; */
+    /* font-size: 40px; */
     text-align: center;
     width: 55px;
     height: 55px;
 }
 .new-task-link {
     color: #ffffff;
+}
+.today {
+    color: #444444;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
 }

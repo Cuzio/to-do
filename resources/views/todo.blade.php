@@ -4,45 +4,34 @@
 <div class="todo">
     <div class="container text-center mt-5">
         <div>
-            <h1 class="to">TO-DO NOW</h1>
-            <hr class="line">
+            <h1 class="mt-5">TO-DO NOW</h1>
+            <hr class="mt-5">
         </div>
-        <div>
-
-
+        <div class="mt-5">
 
             <form action="/createTodo" method="post" enctype="multipart/form-data">
                 @csrf
-                <!-- <div class="input-group mb-3 w-75 mx-auto mt-5">
-                    <input type="text" class="form-control" placeholder="To-do" aria-label="Recipient's username"
-                        aria-describedby="button-addon2" name="title">
-                    <button class="btn btn-outline-dark p-4" type="submit" id="button-addon2" value="Post">Add
-                        task</button>
-                </div> -->
+
                 <div class="mb-3">
                     <label for="" class="form-label">Title</label>
                     <input type="text" name="title" class="form-control">
+                    @error('title')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{$message}}</strong>
+                    </span>
+                    @enderror
                 </div>
                 <div class="mb-3">
                     <label for="" class="form-label">Description</label>
-                    <textarea name="description" id="" cols="5" rows="5" class="form-control">
-
-                    </textarea>
+                    <textarea name="description" id="" cols="5" rows="5" class="form-control"></textarea>
+                    @error('description')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{$message}}</strong>
+                    </span>
+                    @enderror
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
-                @error('title')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{$message}}</strong>
-                </span>
-                @enderror
             </form>
-            <!-- <hr class="line">
-            <div class="list-container">
-                <div class="list">
-                    <h3>This is task</h3>
-                    <button class="btn"><img src="/images/Group 728.png" alt="delete"></button>
-                </div>
-            </div> -->
 
         </div>
     </div>

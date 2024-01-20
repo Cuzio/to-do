@@ -22,8 +22,9 @@ class TodoController extends Controller
             'title' => 'required',
             'description' => 'required'
         ]);
-        if ($validator->fails()){
-            return back()->withError($validator->errors());
+        if ($validator->fails()) {
+            // dd($request->all());
+            return redirect()->back()->withinput()->withErrors($validator->errors());
         }
         $formFields  = [
             'title' => $request->title,
@@ -36,7 +37,7 @@ class TodoController extends Controller
         if($todo){
             return redirect('/')->with('success', "Event added successfully");
         }else{
-            return back()->with('error', "Something went wrong");
+            return redirect()->back()->with('error', "Something went wrong");
         }
     }
 
