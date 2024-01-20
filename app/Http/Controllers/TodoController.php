@@ -51,7 +51,7 @@ class TodoController extends Controller
     }
 
     public function editTodo($id){
-        $event = Todo::all($id);
+        $event = Todo::find($id);
         return view('edit', [
             'event' => $event,
         ]);
