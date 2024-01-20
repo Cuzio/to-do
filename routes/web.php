@@ -27,4 +27,4 @@ Route::post('/createTodo', [TodoController::class, 'createTodo']);
 
 Route::get('/', [TodoController::class, 'getEvents'])->name("get.events");
 
-Route::get('editTodo', [TodoController::class, 'editTodo'])->name('edit.todo');
+Route::get('editTodo/{post_id}', [TodoController::class, 'editTodo'])->name('edit.todo');

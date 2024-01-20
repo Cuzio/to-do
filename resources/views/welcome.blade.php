@@ -19,7 +19,8 @@
                 <p>{{ $event->description }}</p>
             </div>
             <div class="task-buttons">
-                <button class="btn btn-warning task-button"><i class="fa-solid fa-pen-to-square"></i></button>
+                <button class="btn btn-warning task-button"><a href="{{ route('edit.todo', $event->id) }}"><i
+                            class="fa-solid fa-pen-to-square"></i></a></button>
                 <button class="btn btn-warning task-button"><i class="fa-solid fa-trash"></i></button>
             </div>
         </div>

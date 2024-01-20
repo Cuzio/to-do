@@ -49,4 +49,11 @@ class TodoController extends Controller
             ]);
         }
     }
+
+    public function editTodo($id){
+        $event = Todo::all($id);
+        return view('edit', [
+            'event' => $event,
+        ]);
+    }
 }
