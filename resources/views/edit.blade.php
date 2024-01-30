@@ -9,7 +9,7 @@
         </div>
         <div class="mt-5">
 
-            <form action="/createTodo" method="post" enctype="multipart/form-data">
+            <form action="{{ route('update.todo', $event->id) }}" method="post" enctype="multipart/form-data">
                 @csrf
 
                 <div class="mb-3">

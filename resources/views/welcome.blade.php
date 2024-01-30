@@ -19,9 +19,13 @@
                 <p>{{ $event->description }}</p>
             </div>
             <div class="task-buttons">
-                <button class="btn btn-warning task-button"><a href="{{ route('edit.todo', $event->id) }}"><i
-                            class="fa-solid fa-pen-to-square"></i></a></button>
-                <button class="btn btn-warning task-button"><i class="fa-solid fa-trash"></i></button>
+                <button class="btn btn-warning task-button"><a href="{{ route('edit.todo', $event->id) }}"
+                        class="text-dark"><i class="fa-solid fa-pen-to-square"></i></a></button>
+                <form action="{{ route('delete.todo', $event->id) }}" method="post">
+                    @csrf
+                    @method('delete')
+                    <button type="submit" class="btn btn-warning task-button" onclick="return check()"><i class="fa-solid fa-trash"></i></button>
+                </form>
             </div>
         </div>
         @endforeach
@@ -33,4 +37,10 @@
             </button>
         </div>
     </div>
+    <script>
+        const check = () => {
+            const check = confirm('Are you sure you want to delete this post?');
+            return check;
+        }
+        </script>
     @endsection

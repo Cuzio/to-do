@@ -30,3 +30,9 @@ Route::get('/', [TodoController::class, 'getEvents'])->name("get.events");
 Route::get('editTodo/{post_id}', [TodoController::class, 'editTodo'])->name('edit.todo');
 
 Route::post('updateTodo/{post_id}', [TodoController::class, 'updateTodo'])->name('update.todo');
+
+Route::delete('deleteTodo/{post_id}', [TodoController::class, 'deleteTodo'])->name('delete.todo');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
