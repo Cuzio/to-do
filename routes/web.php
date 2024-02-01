@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TodoController;
 use Illuminate\Support\Facades\Route;
@@ -33,6 +34,12 @@ Route::post('updateTodo/{post_id}', [TodoController::class, 'updateTodo'])->name
 
 Route::delete('deleteTodo/{post_id}', [TodoController::class, 'deleteTodo'])->name('delete.todo');
 
-Auth::routes();
+// Auth::routes();
+
+Route::get('login', [AuthController::class, 'login'])->name('login');
+
+Route::get('register', [AuthController::class, 'register'])->name('register');
+
+Route::post('register-user', [AuthController::class, 'registerUser'])->name('register.user');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -1,6 +1,21 @@
 @extends('layouts.app')
 @section("title", "To-do")
 @section('content')
+
+@if (session()->has('error'))
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>{{session()->get('error')}}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+@endif
+@if (session()->has('success'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>{{session()->get('success')}}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+@endif
+
+
 <div class="container welcome">
     <h1 class="text-center mt-5">Welcome there!!!</h1>
     <div class="mt-5 w-50 mx-auto">
@@ -10,7 +25,7 @@
         </form>
     </div>
     <div class="task-container mt-5">
-        <h3 class="today">Today's tasks</h3>
+        <h3 class="today text-center">Today's tasks</h3>
         @foreach($events as $event)
         <div class="tasks">
             <input type="checkbox" name="{{ $event->is_completed }}" id="" class="task-box">
@@ -24,7 +39,7 @@
                 <form action="{{ route('delete.todo', $event->id) }}" method="post">
                     @csrf
                     @method('delete')
-                    <button type="submit" class="btn btn-warning task-button" onclick="return check()"><i class="fa-solid fa-trash"></i></button>
+                    <button type="submit" class="btn btn-warning task-button mx-auto" onclick="return check()"><i class="fa-solid fa-trash"></i></button>
                 </form>
             </div>
         </div>
