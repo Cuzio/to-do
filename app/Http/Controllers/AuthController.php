@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
@@ -29,9 +30,9 @@ class AuthController extends Controller
         ]);
 
         if($validator->fails()){
-            dd($request->all());
             return redirect()->back()->withInput()->withErrors($validator->errors());
         }
+        // dd($request->all());
 
         $formFields = [
             'first_name' => $request->input('first_name'),

@@ -42,4 +42,6 @@ Route::get('register', [AuthController::class, 'register'])->name('register');
 
 Route::post('register-user', [AuthController::class, 'registerUser'])->name('register.user');
 
+Route::get('logout', [AuthController::class, 'logout'])->name('logout');
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
